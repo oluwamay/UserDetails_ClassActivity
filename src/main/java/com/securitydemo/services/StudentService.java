@@ -9,4 +9,6 @@ public interface StudentService {
     ResponseEntity<StudentResponse> findStudent(Long studentId);
 
     String addStudent(StudentRequest request);
+
+    void removeStudent(Long studentId);
 }

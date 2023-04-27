@@ -25,7 +25,11 @@ public class StudentController {
 
     @PostMapping()
     public ResponseEntity<String> saveStudent(@RequestBody StudentRequest request){
-
         return new ResponseEntity<>( studentService.addStudent(request)+" created successfully", HttpStatus.CREATED);
+    }
+    @DeleteMapping("/{student_id}")
+    public ResponseEntity<String> deleteStudent(@PathVariable Long student_id){
+       studentService.removeStudent(student_id);
+        return new ResponseEntity<>("Deleted successfully", HttpStatus.OK);
     }
 }
